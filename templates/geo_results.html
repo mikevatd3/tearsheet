@@ -1,0 +1,18 @@
+<table>
+{% for row in result %}
+<tr>
+    <th>
+        {{ row.display_name }}
+    </th>
+    <td>
+        {{ row.sum_level }}
+    </td>
+    <td>
+        {{ row.full_geoid }}
+    </td>
+    <td>
+        <button>+</button>
+    </td>
+</tr>
+{% endfor %}
+</table>

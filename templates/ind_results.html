@@ -1,0 +1,29 @@
+<table>
+{% for row in result %}
+    <tr>
+        <td><button class="expand_btn">▶</button></td>
+        <th>
+            {{ row.title }}
+        </th>
+        <td class="universe">
+            {{ row.universe }}
+        </td>
+        <td>
+            {{ row.table_id }}
+        </td>
+    </tr>
+    <tr class="details" style="display: none;">
+        <td colspan="4">
+            <table class="var_results">
+                {% for column in row.columns %}
+                <tr>
+                    <th><span style="white-space:pre;">{% for i in range(column.indentation) %}    {% endfor %}{{ column.variable_name }}</span></th>
+                    <td>{{ column.variable_id }}</td>
+                    <td><button>+</button></td>
+                </tr>
+                {% endfor %}
+            </table>
+        </td>
+    </tr>
+{% endfor %}
+</table>

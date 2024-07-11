@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tearsheet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <script src="https://unpkg.com/htmx.org@1.9.10" 
+        integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" 
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark-reasonable.min.css">
+    {% block extra_js %}
+    {% endblock %}
+    {% block extra_styles %}
+    {% endblock %}
+    <style>
+
+        :root {
+            font-family: "IBM Plex Sans";
+            background-color: #3A3A3C;
+        }
+        
+        nav {
+            padding: 0 2em 0 2em;
+            color: white;
+        }
+
+        tr table {
+            font-size: 1.2em;
+        }
+
+        #home {
+            font-size: x-large;
+            font-weight: bold;
+        }
+
+        #top_bar {
+            margin: 1em;
+        }
+
+        #all_content {
+            padding-top: 1em;
+        }
+
+        .one_line_input {
+          display: flex;
+          gap: 1rem;
+          width: 100%;
+        }    
+
+        .one_line_input input {
+          flex-grow: 3;
+        }
+
+        .one_line_input button {
+          width: min-content;
+        }
+
+        .one_line_input select {
+          width: min-content;
+        }
+
+        .help_text {
+            font-size: larger;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav id="top_bar">
+        {% include 'nav.html' %}
+    </nav>
+    <main id="all_content" class="container">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+
+</html>
